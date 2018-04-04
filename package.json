@@ -1,5 +1,5 @@
 {
-  "name": "bitcoin-testnet3",
+  "name": "bitcoin",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,13 +8,18 @@
   "dependencies": {
     "bigi": "^1.4.2",
     "bitcoinjs-lib": "^3.3.2",
+    "bootstrap": "^4.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "ejs": "^2.5.8",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "jquery": "^3.3.1",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.3",
-    "request": "^2.85.0"
+    "request": "^2.85.0",
+    "sweetalert2": "^7.18.0"
   }
 }
