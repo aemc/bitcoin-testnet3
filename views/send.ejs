@@ -13,15 +13,17 @@
         </div>
         <div class="col-md-12">
             <label for="basic-url">Add amount</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-btc"></i></span>
+            <form action="/send" method="POST">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-btc"></i></span>
+                    </div>
+                    <input name="amount" class="form-control" type="number" placeholder="Enter an amount" aria-label="Amount">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary">Send</button>
+                    </div>
                 </div>
-                <input class="form-control" type="number" placeholder="Enter an amount" aria-label="Amount (to the nearest dollar)">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Send</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

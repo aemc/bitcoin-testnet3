@@ -2,16 +2,17 @@
 <html>
     <head>
         <title>Bitcoin testnet3 Wallet</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/scripts/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/scripts/sweetalert2/dist/sweetalert2.min.css">
     </head>
     <body>
 
     <div class="container">
         <nav class="nav nav-pills nav-justified">
-            <a class="nav-item nav-link active" href="/">Bitcoin Testnet3 Wallet</a>
-            <a class="nav-item nav-link" href="/receive">Receive</a>
-            <a class="nav-item nav-link" href="/send">Send</a>
+            <a class="<%= (page === 'home') ? 'nav-item nav-link active' : 'nav-item nav-link' %>" href="/">Bitcoin Testnet3 Wallet</a>
+            <a class="<%= (page === 'receive') ? 'nav-item nav-link active' : 'nav-item nav-link' %>" href="/receive">Receive</a>
+            <a class="<%= (page === 'send') ? 'nav-item nav-link active' : 'nav-item nav-link' %>" href="/send">Send</a>
         </nav>
     </div>
 
