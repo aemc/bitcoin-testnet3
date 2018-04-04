@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="basic-url">Send to a Bitcoin Testnet3 Address</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Address</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Enter Bitcoin Testnet3 Address" aria-label="Address">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="basic-url">Add amount</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input class="form-control" type="number" placeholder="Enter an amount" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

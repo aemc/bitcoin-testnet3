@@ -8,10 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 You will need to install Node.js and Express. See below for links.
 
 ### Installing
-Clone or download the source code to local directory.
+Run ```$ git clone https://github.com/aemc/bitcoin-testnet3.git``` on the cli, or download the source code to a local directory of your choice.
 
 ### Running
-Run ```$ nodemon app.js``` within the root directory of the project.
+Run ```$ nodemon app.js``` on the cli within the root directory of the project.
 
 ### To-Do List
 - [ ] Add restful api
