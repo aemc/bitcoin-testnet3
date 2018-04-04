@@ -14,7 +14,10 @@ app.use(express.json());
 
 // View engine setup
 app.set("view engine", "ejs");
+
+// Resolve module paths
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
+app.use('/styles', express.static(__dirname + '/public/'));
 
 // Assign routes
 app.use('/', indexRoutes);

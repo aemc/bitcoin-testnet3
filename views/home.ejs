@@ -3,24 +3,36 @@
 <div class="container">
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th scope="col">Address: <%= address %></th>
-            <th scope="col">Testnet Bitcoin</th>
-        </tr>
+            <tr>
+                <th scope="col">Address: <%= address %></th>
+                <th scope="col">Amount</th>
+            </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">Balance</th>
-            <td><i class="fa fa-btc"></i><%= JSON.stringify(balance) %></td>
-        </tr>
-        <tr>
-            <th scope="row">Total Received</th>
-            <td><i class="fa fa-btc"></i><%= JSON.stringify(totalReceived) %></td>
-        </tr>
-        <tr>
-            <th scope="row">Total Sent</th>
-            <td><i class="fa fa-btc"></i><%= JSON.stringify(totalSent) %></td>
-        </tr>
+            <tr>
+                <th scope="row">Balance</th>
+                <td><i class="fa fa-btc"></i><%= JSON.stringify(balance) %></td>
+            </tr>
+            <tr>
+                <th scope="row">Total Received</th>
+                <td><i class="fa fa-btc"></i><%= JSON.stringify(totalReceived) %></td>
+            </tr>
+            <tr>
+                <th scope="row">Total Sent</th>
+                <td><i class="fa fa-btc"></i><%= JSON.stringify(totalSent) %></td>
+            </tr>
+            <tr>
+                <th scope="row">Confirmed Transactions</th>
+                <td><%= JSON.stringify(confirmedTx) %></td>
+            </tr>
+            <tr>
+                <th scope="row">Unconfirmed Transactions</th>
+                <td><%= JSON.stringify(unconfirmedTx) %></td>
+            </tr>
+            <tr>
+                <th scope="row">Total Transactions</th>
+                <td><%= JSON.stringify(totalTx) %></td>
+            </tr>
         </tbody>
     </table>
 </div>
