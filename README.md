@@ -18,7 +18,7 @@ You will need to install Node.js and Express. See below for download links.
 
 
 ### Running
-1. Run ```$ nodemon app.js``` on the cli within the root of the project folder.
+1. Run ```$ npm start``` on the cli within the root of the project folder.
 2. Open your browser and navigate to ```localhost:3000``` to see the app running.
 
 
@@ -26,6 +26,7 @@ You will need to install Node.js and Express. See below for download links.
 - [ ] Add restful api
 - [ ] Transaction History on main page
 - [ ] Cleanup UI
+- [ ] Display useful info about a specific address on the main page
 
 ### Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine

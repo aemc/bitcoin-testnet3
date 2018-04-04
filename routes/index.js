@@ -17,6 +17,32 @@ router.get('/', (req, res) => {
         });
 });
 
+// router.get('/balance/:address', (req, res) => {
+//     request
+//         .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + req.params.address + '/balance', (err, res, body) => {
+//             if (err) {
+//                 console.log(err)
+//             } else if (!err && res.statusCode === 200) {
+//                 const balance = JSON.parse(body).final_balance;
+//                 console.log(`Latest bitcoin balance is ${balance}`);
+//                 return balance
+//             }
+//         })
+//         .pipe(res);
+//
+// });
+
+// router.get('/info', (req, res) => {
+//     request
+//         .get('https://api.blockcypher.com/v1/tokens/' + TOKEN)
+//         .pipe(res);
+// });
+//
+// router.get('/addr', (req, res) => {
+//     request.post('https://api.blockcypher.com/v1/bcy/test/addrs?token=' + data[1].token)
+//         .pipe(res)
+// });
+
 // Receive page
 router.get('/receive', (req, res) => {
     res.render('receive', {page: 'receive'});
