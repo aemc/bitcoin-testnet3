@@ -22,40 +22,44 @@ router.post('/', (req, res) => {
         url: 'https://api.blockcypher.com/v1/bcy/test/txs/new',
         form: JSON.stringify(newtx)
     }, (err, resp, body) => {
-        // Sign each of the hex-encoded string required to finalize the transaction
-        let tmptx = JSON.parse(body);
-        tmptx.pubkeys = [];
-        tmptx.signatures = tmptx.tosign.map((tosign, n) => {
-            tmptx.pubkeys.push(keys.getPublicKeyBuffer().toString('hex'));
-            return keys.sign(new buffer.Buffer(tosign, 'hex')).toDER().toString('hex');
-        });
+        if (err) {
+            console.log(err)
+        } else {
+            // Sign each of the hex-encoded string required to finalize the transaction
+            let tmptx = JSON.parse(body);
+            tmptx.pubkeys = [];
+            tmptx.signatures = tmptx.tosign.map((tosign, n) => {
+                tmptx.pubkeys.push(keys.getPublicKeyBuffer().toString('hex'));
+                return keys.sign(new buffer.Buffer(tosign, 'hex')).toDER().toString('hex');
+            });
 
-        // Send back the transaction with all the signatures to broadcast
-        request.post({
-            url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
-            form: JSON.stringify(tmptx)
-        }, (err, resp, body) => {});
+            // Send back the transaction with all the signatures to broadcast
+            request.post({
+                url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
+                form: JSON.stringify(tmptx)
+            }, (err, resp, body) => {});
 
-        const sendtx = {
-            tx: tmptx.tx,
-            tosign: tmptx.tosign,
-            signatures: tmptx.signatures,
-            pubkeys: [pubKey]
-        };
+            const sendtx = {
+                tx: tmptx.tx,
+                tosign: tmptx.tosign,
+                signatures: tmptx.signatures,
+                pubkeys: [pubKey]
+            };
 
-        // Send transaction
-        request.post({
-            url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
-            form: JSON.stringify(sendtx)
-        }, (err, resp, body) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log((body))
-                console.log(`A total of ${JSON.parse(body).tx.outputs[0].value} coins was sent`);
-                res.redirect('/send');
-            }
-        })
+            // Send transaction
+            request.post({
+                url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
+                form: JSON.stringify(sendtx)
+            }, (err, resp, body) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log((body)) //TODO: remove
+                    console.log(`A total of ${JSON.parse(body).tx.outputs[0].value} coins was sent`);
+                    res.redirect('/send');
+                }
+            })
+        }
     })
 });
 

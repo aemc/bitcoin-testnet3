@@ -32,7 +32,9 @@ app.get('/addr', (req, res) => {
 app.get('/balance/:address', (req, res) => {
     request
         .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + req.params.address + '/balance', (err, res, body) => {
-            if (!err && res.statusCode === 200) {
+            if (err) {
+                console.log(err)
+            } else if (!err && res.statusCode === 200) {
                 const balance = JSON.parse(body).final_balance;
                 console.log(`Latest bitcoin balance is ${balance}`);
                 return balance

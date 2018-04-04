@@ -8,7 +8,9 @@ const data    = require('../creds.json');
 router.get('/', (req, res) => {
     request
         .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr + '/balance', (err, resp, body) => {
-            if (!err && resp.statusCode === 200) {
+            if (err) {
+                console.log(err)
+            } else if (!err && resp.statusCode === 200) {
                 const balance = JSON.parse(body).final_balance;
                 res.render('home', {balance, page: 'home'})
             }
