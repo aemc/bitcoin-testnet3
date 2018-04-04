@@ -27,6 +27,7 @@ You will need to install Node.js and Express. See below for download links.
 - [ ] Transaction History on main page
 - [ ] Cleanup UI
 - [ ] Display useful info about a specific address on the main page
+- [ ] Add alerts
 
 ### Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine

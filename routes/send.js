@@ -54,8 +54,7 @@ router.post('/', (req, res) => {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log((body)) //TODO: remove
-                    console.log(`A total of ${JSON.parse(body).tx.outputs[0].value} coins was sent`);
+                    //console.log((body)) //TODO: remove
                     res.redirect('/send');
                 }
             })

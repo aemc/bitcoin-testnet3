@@ -6,34 +6,37 @@ const data    = require('../creds.json');
 
 // Home page
 router.get('/', (req, res) => {
+    let txrefs;
+
     request
         .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr, (err, resp, body) => {
             if (err) {
-                console.log(err)
+                return console.log(err)
             } else if (!err && resp.statusCode === 200) {
-                const data = JSON.parse(body);
-                //console.log(data)
-            }
-        });
+                const addrData = JSON.parse(body);
+                txrefs = addrData.txrefs;
 
-    request
-        .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr + '/balance', (err, resp, body) => {
-            if (err) {
-                console.log(err)
-            } else if (!err && resp.statusCode === 200) {
-                const data = JSON.parse(body);
-                res.render('home', {
-                    address: data.address,
-                    balance: data.final_balance,
-                    totalReceived: data.total_received,
-                    totalSent: data.total_sent,
-                    confirmedTx: data.n_tx,
-                    unconfirmedTx: data.unconfirmed_n_tx,
-                    totalTx: data.final_n_tx,
-                    page: 'home'
-                })
+                request
+                    .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr + '/balance', (err, resp, body) => {
+                        if (err) {
+                            console.log(err)
+                        } else if (!err && resp.statusCode === 200) {
+                            const data = JSON.parse(body);
+                            res.render('home', {
+                                address: data.address,
+                                balance: data.final_balance,
+                                totalReceived: data.total_received,
+                                totalSent: data.total_sent,
+                                confirmedTx: data.n_tx,
+                                unconfirmedTx: data.unconfirmed_n_tx,
+                                totalTx: data.final_n_tx,
+                                page: 'home',
+                                txrefs,
+                            })
+                        }
+                    });
             }
-        });
+        })
 });
 
 // router.get('/balance/:address', (req, res) => {

@@ -1,3 +1,24 @@
 .container {
     background-color: #fafafa
 }
+
+.table {
+    table-layout: fixed;
+    width: 100%
+}
+
+td {
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+}
+
+.fa-arrow-circle-down {
+    color: green
+}
+
+.fa-arrow-circle-up {
+    color: red
+}

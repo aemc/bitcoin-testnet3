@@ -35,6 +35,38 @@
             </tr>
         </tbody>
     </table>
+
+    <br>
+
+    <label>Transaction History</label>
+    <table>
+        <thead>
+            <tr class="row">
+                <th class="col-md-1" scope="col">Tx</th>
+                <th class="col-md-3" scope="col">Tx Hash</th>
+                <th class="col-md-2" scope="col">Value</th>
+                <th class="col-md-2" scope="col">Balance</th>
+                <th class="col-md-2" scope="col"># of Confirmations</th>
+                <th class="col-md-2" scope="col">Confirmed Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < txrefs.length; i++) { %>
+                <tr class="row">
+                    <% if (txrefs[i].tx_input_n >= 0) { %>
+                        <td class="col-md-1" ><i class="fa fa-arrow-circle-down"></i></td>
+                    <% } else { %>
+                        <td class="col-md-1" ><i class="fa fa-arrow-circle-up"></i></td>
+                    <% } %>
+                    <td class="col-md-3" ><%= txrefs[i].tx_hash %></td>
+                    <td class="col-md-2" ><i class="fa fa-btc"></i><%= JSON.stringify(txrefs[i].value) %></td>
+                    <td class="col-md-2" ><i class="fa fa-btc"></i><%= JSON.stringify(txrefs[i].ref_balance) %></td>
+                    <td class="col-md-2" ><%= JSON.stringify(txrefs[i].confirmations) %></td>
+                    <td class="col-md-2" ><%= new Date(txrefs[i].confirmed).toDateString() %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </div>
 
 <% include ./partials/footer %>
