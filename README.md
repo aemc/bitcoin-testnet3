@@ -4,6 +4,7 @@ A web application using blockcypher's api which allows the user to fund an accou
 ## App Features
 - [x] Fund a specific address with testnet bitcoins
 - [x] Send testnet bitcoins to an address
+- [x] Transaction History
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and/or testing purposes.
@@ -20,6 +21,8 @@ You will need to install Node.js and Express. See below for download links.
 ### Running
 1. Run ```$ npm start``` on the cli within the root of the project folder.
 2. Open your browser and navigate to ```localhost:3000``` to see the app running.
+
+Note: Due to rate limits on the API (for free tier), the endpoints may not work temporarily. Give it a few minutes before using the application again.
 
 
 ### To-Do List
