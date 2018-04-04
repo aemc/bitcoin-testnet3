@@ -11,8 +11,14 @@ router.get('/', (req, res) => {
             if (err) {
                 console.log(err)
             } else if (!err && resp.statusCode === 200) {
-                const balance = JSON.parse(body).final_balance;
-                res.render('home', {balance, page: 'home'})
+                const data = JSON.parse(body);
+                res.render('home', {
+                    address: data.address,
+                    balance: data.final_balance,
+                    totalReceived: data.total_received,
+                    totalSent: data.total_sent,
+                    page: 'home'
+                })
             }
         });
 });
