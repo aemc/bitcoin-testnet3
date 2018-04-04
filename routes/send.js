@@ -1,13 +1,13 @@
-const { privKey, pubKey }   = require('../keys.json');
+const { privKey, pubKey } = require('../keys.json');
 
-const express   = require('express');
-const router    = express.Router();
-const request   = require('request');
+const express = require('express');
+const router  = express.Router();
+const request = require('request');
 
-const bitcoin   = require('bitcoinjs-lib');
-const bigi      = require('bigi');
-const buffer    = require('buffer');
-const keys      = new bitcoin.ECPair(bigi.fromHex(privKey));
+const bitcoin = require('bitcoinjs-lib');
+const bigi    = require('bigi');
+const buffer  = require('buffer');
+const keys    = new bitcoin.ECPair(bigi.fromHex(privKey));
 
 const data = require('../creds.json');
 
@@ -17,10 +17,12 @@ router.post('/', (req, res) => {
         outputs: [{addresses: [data[1].addr], value: parseInt(req.body.amount)}]
     };
 
+    // Creating transaction + locally sign transaction
     request.post({
         url: 'https://api.blockcypher.com/v1/bcy/test/txs/new',
         form: JSON.stringify(newtx)
     }, (err, resp, body) => {
+        // Sign each of the hex-encoded string required to finalize the transaction
         let tmptx = JSON.parse(body);
         tmptx.pubkeys = [];
         tmptx.signatures = tmptx.tosign.map((tosign, n) => {
@@ -28,6 +30,7 @@ router.post('/', (req, res) => {
             return keys.sign(new buffer.Buffer(tosign, 'hex')).toDER().toString('hex');
         });
 
+        // Send back the transaction with all the signatures to broadcast
         request.post({
             url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
             form: JSON.stringify(tmptx)
@@ -40,6 +43,7 @@ router.post('/', (req, res) => {
             pubkeys: [pubKey]
         };
 
+        // Send transaction
         request.post({
             url: 'https://api.blockcypher.com/v1/bcy/test/txs/send',
             form: JSON.stringify(sendtx)

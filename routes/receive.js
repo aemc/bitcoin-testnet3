@@ -1,7 +1,8 @@
 const express   = require('express');
 const router    = express.Router();
 const request   = require('request');
-const data = require('../creds.json');
+
+const data      = require('../creds.json');
 
 router.post('/', (req, res) => {
     const info =  { "address": data[0].addr, "amount": parseInt(req.body.amount) };

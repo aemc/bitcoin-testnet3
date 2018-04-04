@@ -3,11 +3,11 @@ const express = require('express');
 const app     = express();
 
 const data    = require('./creds.json');
-const Swal    = require('sweetalert2');
 
-const indexRoutes = require('./routes/index');
+// Import routes
+const indexRoutes   = require('./routes/index');
 const receiveRoutes = require('./routes/receive');
-const sendRoutes = require('./routes/send');
+const sendRoutes    = require('./routes/send');
 
 app.use(express.urlencoded({
     extended: true
@@ -42,7 +42,7 @@ app.get('/balance/:address', (req, res) => {
 
 });
 
-// Routes
+// Assign routes
 app.use('/', indexRoutes);
 app.use('/receive', receiveRoutes);
 app.use('/send', sendRoutes);

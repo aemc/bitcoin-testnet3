@@ -1,7 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 const request = require('request');
-const data = require('../creds.json');
+
+const data    = require('../creds.json');
 
 // Home page
 router.get('/', (req, res) => {

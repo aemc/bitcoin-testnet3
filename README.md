@@ -1,5 +1,5 @@
 # Bitcoin Testnet3
-Personal Project. A web application using blockcypher's api which allows the user to fund an account with "testnet bitcoins" and transfer coins to a specific address.
+A web application using blockcypher's api which allows the user to fund an account with "testnet bitcoins" and transfer coins to a specific address.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
