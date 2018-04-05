@@ -23,7 +23,8 @@ router.post('/', (req, res) => {
         form: JSON.stringify(newtx)
     }, (err, resp, body) => {
         if (err) {
-            console.log(err)
+            console.log(err);
+            res.redirect('/send');
         } else {
             // Sign each of the hex-encoded string required to finalize the transaction
             let tmptx = JSON.parse(body);
@@ -52,9 +53,9 @@ router.post('/', (req, res) => {
                 form: JSON.stringify(sendtx)
             }, (err, resp, body) => {
                 if (err) {
-                    console.log(err)
+                    console.log(err);
+                    res.redirect('/send');
                 } else {
-                    //console.log((body)) //TODO: remove
                     res.redirect('/send');
                 }
             })

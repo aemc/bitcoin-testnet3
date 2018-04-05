@@ -7,9 +7,12 @@ const indexRoutes   = require('./routes/index');
 const receiveRoutes = require('./routes/receive');
 const sendRoutes    = require('./routes/send');
 
+// Parse incoming requests with urlencoded payloads
 app.use(express.urlencoded({
     extended: true
 }));
+
+// Parse incoming requests with JSON payloads
 app.use(express.json());
 
 // View engine setup

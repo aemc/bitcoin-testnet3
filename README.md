@@ -10,7 +10,7 @@ A web application using blockcypher's api which allows the user to fund an accou
 These instructions will get you a copy of the project up and running on your local machine for development and/or testing purposes.
 
 ### Prerequisites
-You will need to install Node.js and Express. See below for download links.
+You will need to install Node.js. See below for the download link.
 
 ### Installing
 1. Run ```$ git clone https://github.com/aemc/bitcoin-testnet3.git``` on the cli, or download the source code to a local directory of your choice.
@@ -23,14 +23,6 @@ You will need to install Node.js and Express. See below for download links.
 2. Open your browser and navigate to ```localhost:3000``` to see the app running.
 
 Note: Due to rate limits on the API (for free tier), the endpoints may not work temporarily. Give it a few minutes before using the application again.
-
-
-### To-Do List
-- [ ] Add restful api
-- [ ] Transaction History on main page
-- [ ] Cleanup UI
-- [ ] Display useful info about a specific address on the main page
-- [ ] Add alerts
 
 ### Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine

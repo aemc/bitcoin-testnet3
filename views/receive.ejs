@@ -11,12 +11,13 @@
                     </div>
                     <input name="amount" type="number" class="form-control" placeholder="Enter an amount up to 500,000 Testnet Bitcoins" aria-label="Amount (to the nearest dollar)">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary">Fund</button>
+                        <button class="btn btn-outline-secondary" onclick="Swal('Success', 'Request sent!','success')">Fund</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
 </div>
 
 <% include ./partials/footer %>

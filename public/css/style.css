@@ -2,7 +2,16 @@
     background-color: #fafafa
 }
 
-.table {
+
+.fa-arrow-circle-down {
+    color: green
+}
+
+.fa-arrow-circle-up {
+    color: red
+}
+
+table {
     table-layout: fixed;
     width: 100%
 }
@@ -13,12 +22,4 @@ td {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
-}
-
-.fa-arrow-circle-down {
-    color: green
-}
-
-.fa-arrow-circle-up {
-    color: red
 }
