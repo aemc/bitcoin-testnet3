@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
         form: JSON.stringify(newtx)
     }, (err, resp, body) => {
         if (err) {
-            console.log(err);
+            console.trace(err);
             res.redirect('/send');
         } else {
             // Sign each of the hex-encoded string required to finalize the transaction
@@ -53,9 +53,9 @@ router.post('/', (req, res) => {
                 form: JSON.stringify(sendtx)
             }, (err, resp, body) => {
                 if (err) {
-                    console.log(err);
+                    console.trace(err);
                     res.redirect('/send');
-                } else {
+                } else if (!err && resp.statusCode === 200) {
                     res.redirect('/send');
                 }
             })

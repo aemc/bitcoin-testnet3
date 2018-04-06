@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     request
         .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr, (err, resp, body) => {
             if (err) {
-                console.log(err);
+                console.trace(err);
                 res.redirect('/');
             } else if (!err && resp.statusCode === 200) {
                 const addrData = JSON.parse(body);
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 request
                     .get('https://api.blockcypher.com/v1/bcy/test/addrs/' + data[0].addr + '/balance', (err, resp, body) => {
                         if (err) {
-                            console.log(err);
+                            console.trace(err);
                             res.redirect('/');
                         } else if (!err && resp.statusCode === 200) {
                             const data = JSON.parse(body);
