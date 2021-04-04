@@ -19,7 +19,7 @@
     "jquery": "^3.5.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "sweetalert2": "^7.28.4"
   }
 }
