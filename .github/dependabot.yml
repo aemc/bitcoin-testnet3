@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: sweetalert2
+    versions:
+    - 10.16.4
+    - 10.16.5
+  - dependency-name: cookie-parser
+    versions:
+    - 1.4.5
