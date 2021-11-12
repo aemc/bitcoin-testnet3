@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "bigi": "^1.4.2",
-    "bitcoinjs-lib": "^5.2.0",
+    "bitcoinjs-lib": "^6.0.0",
     "bootstrap": "^4.6.0",
     "cookie-parser": "~1.4.5",
     "debug": "~4.3.2",
