@@ -20,6 +20,6 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.18",
     "request": "^2.88.2",
-    "sweetalert2": "^11.4.4"
+    "sweetalert2": "^11.6.9"
   }
 }
